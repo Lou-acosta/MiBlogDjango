@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">Mi Blog</a></h1>
+        <nav>
+            <a href="{% url 'listar_autores' %}">Lista de Autores</a>
+            <a href="/blog/crear_autor/">Crear Autor</a>
+            <a href="/blog/buscar_post/">Buscar Posts</a>
+            <a href="{% url 'listar_posts' %}">Lista de Posts</a> <!-- Añadido -->
+            <a href="{% url 'crear_post' %}">Crear Post</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

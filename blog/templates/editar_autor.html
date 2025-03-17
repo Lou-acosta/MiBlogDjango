@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Autor{% endblock %}
+
+{% block content %}
+<h2>Editar Autor</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar Cambios</button>
+</form>
+<a href="{% url 'listar_autores' %}">Volver a la lista de autores</a>
+{% endblock %}

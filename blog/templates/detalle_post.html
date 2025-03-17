@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle del Post{% endblock %}
+
+{% block content %}
+<h2>{{ post.titulo }}</h2>
+<p>{{ post.contenido }}</p>
+<p><small>Publicado el: {{ post.fecha_publicacion|date:"d M Y, H:i" }}</small></p>
+
+<a href="{% url 'buscar_post' %}">Volver a Buscar Posts</a>
+{% endblock %}

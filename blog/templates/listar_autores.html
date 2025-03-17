@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Autores{% endblock %}
+
+{% block content %}
+<h2>Lista de Autores</h2>
+
+{% if autores %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for autor in autores %}
+                <tr>
+                    <td>{{ autor.nombre }}</td>
+                    <td>{{ autor.email }}</td>
+                    <td>
+                        <a href="{% url 'editar_autor' autor.id %}">Editar</a> |
+                        <a href="{% url 'eliminar_autor' autor.id %}" style="color: red;">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No hay autores registrados.</p>
+{% endif %}
+
+<a href="{% url 'crear_autor' %}">Agregar Nuevo Autor</a>
+{% endblock %}
+
