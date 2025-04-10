@@ -3,11 +3,22 @@
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-<h2>Bienvenido a Mi Blog</h2>
-<p>Administra autores y posts fácilmente.</p>
-<ul>
-    <li><a href="{% url 'crear_autor' %}">Crear un Nuevo Autor</a></li>
-    <li><a href="{% url 'listar_autores' %}">Ver y Gestionar Autores</a></li>
-    <li><a href="{% url 'buscar_post' %}">Buscar Posts</a></li>
-</ul>
+<div class="hero">
+    <h1>Bienvenido a Mi Blog</h1>
+    <p>Administra autores y posts fácilmente.</p>
+</div>
+
+<div class="container">
+    <p>¡Empieza a crear y administrar posts en tu blog!</p>
+</div>
+
+<section>
+    <div class="actions">
+        <a href="{% url 'crear_autor' %}" class="action-link">Crear un Nuevo Autor</a>
+        <a href="{% url 'listar_autores' %}" class="action-link">Ver y Gestionar Autores</a>
+        <a href="{% url 'buscar_post' %}" class="action-link">Buscar Posts</a>
+        <a href="{% url 'crear_post' %}" class="action-link">Crear un Nuevo Post</a>
+    </div>
+</section>
 {% endblock %}
+

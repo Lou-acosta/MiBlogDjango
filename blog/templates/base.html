@@ -40,7 +40,8 @@
                     {% if user.is_authenticated %}
                         <a href="{% url 'logout' %}">Cerrar sesión</a>
                     {% else %}
-                        <a href="{% url 'login' %}">Iniciar sesión</a>
+                        <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                        <li><a href="{% url 'register' %}" class="register">Registrarse</a></li>
                     {% endif %}
                 </li>
             </ul>
@@ -58,3 +59,4 @@
     </footer>
 </body>
 </html>
+

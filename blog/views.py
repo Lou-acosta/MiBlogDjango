@@ -63,7 +63,7 @@ def listar_autores(request):
     return render(request, 'listar_autores.html', {'autores': autores})
 
 @login_required
-def crear_post(request):
+def crear_post_view(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
@@ -149,3 +149,7 @@ def eliminar_post(request, post_id):
 def profile_view(request):
     perfil = request.user.perfil
     return render(request, 'accounts/profile.html', {'perfil': perfil})
+
+def detalle_post_view(request, id):
+    post = get_object_or_404(Post, id=id)  # Busca el post o lanza un error 404 si no existe
+    return render(request, 'blog/detalle_post.html', {'post': post})

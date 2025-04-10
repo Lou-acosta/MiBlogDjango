@@ -1,8 +1,39 @@
+:root {
+    --primary-color: #007bff; /* Azul */
+    --secondary-color: #6c757d; /* Gris */
+    --background-color: #f8f9fa; /* Gris claro */
+    --text-color: #212529; /* Gris oscuro */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+section {
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center; /* Centra el título principal */
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 header {
@@ -18,4 +49,104 @@ nav a {
     text-decoration: none;
 }
 
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+}
 
+nav ul li a:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+    color: white;
+    border-radius: 5px; /* Borde redondeado al pasar el mouse */
+}
+
+nav ul li a.register {
+    background-color: #007bff; /* Azul llamativo */
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+
+nav ul li a.register:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Efecto hover */
+}
+
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Agregar sombra al texto */
+}
+.hero p {
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 20px;
+    margin: 20px;
+}
+
+.action-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.action-link:hover {
+    background-color: #0056b3;
+}

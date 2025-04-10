@@ -15,12 +15,18 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, 'accounts/login.html', {'form': form})
 
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+
 def register_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login')  # Redirige al login después de registrarse
+            usuario = form.save()  # Guarda el usuario
+            print(f"Usuario registrado: {usuario.username}")  # Esto debe aparecer en la terminal
+            return redirect('login')  # Redirige después del registro
+        else:
+            print("Formulario inválido:", form.errors)  # Muestra errores en la terminal
     else:
         form = UserCreationForm()
     return render(request, 'accounts/register.html', {'form': form})

@@ -126,3 +126,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]  # Ruta donde están tus archivos CSS, JS, etc.
+
+
