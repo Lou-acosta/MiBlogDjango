@@ -1,25 +1,60 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
-{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mi Blog{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+    <title>{% block title %}Mi Proyecto{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        nav {
+            background-color: #333; /* Fondo oscuro */
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px; /* Espaciado entre enlaces */
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1><a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">Mi Blog</a></h1>
         <nav>
-            <a href="{% url 'listar_autores' %}">Lista de Autores</a>
-            <a href="/blog/crear_autor/">Crear Autor</a>
-            <a href="/blog/buscar_post/">Buscar Posts</a>
-            <a href="{% url 'listar_posts' %}">Lista de Posts</a> <!-- Añadido -->
-            <a href="{% url 'crear_post' %}">Crear Post</a>
+            <ul>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'about' %}">Acerca de mí</a></li>
+                <li><a href="{% url 'listar_posts' %}">Posts</a></li>
+                <li>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}">Cerrar sesión</a>
+                    {% else %}
+                        <a href="{% url 'login' %}">Iniciar sesión</a>
+                    {% endif %}
+                </li>
+            </ul>
         </nav>
     </header>
+
     <main>
-        {% block content %}{% endblock %}
+        {% block content %}
+        <!-- Contenido específico de cada página -->
+        {% endblock %}
     </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Proyecto. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

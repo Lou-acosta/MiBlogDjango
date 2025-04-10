@@ -8,7 +8,10 @@ urlpatterns = [
     path('editar_autor/<int:autor_id>/', views.editar_autor, name='editar_autor'),  # Editar autor
     path('eliminar_autor/<int:autor_id>/', views.eliminar_autor, name='eliminar_autor'),  # Eliminar autor
     path('buscar_post/', views.buscar_post, name='buscar_post'),
-    path('listar_posts/', views.listar_posts, name='listar_posts'),
+    path('listar_post/', views.listar_posts, name='listar_posts'),
     path('crear_post/', views.crear_post, name='crear_post'),
-    path('detalle_post/<int:post_id>/', views.detalle_post, name='detalle_post'),
+    path('posts/crear/', views.crear_post, name='crear_post'),
+    path('posts/editar/<int:post_id>/', views.editar_post, name='editar_post'),
+    path('posts/eliminar/<int:post_id>/', views.eliminar_post, name='eliminar_post'),
 ]
+
